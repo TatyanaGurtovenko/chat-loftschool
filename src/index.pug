@@ -1,0 +1,31 @@
+-var pageTitle = 'Chat'
+
+doctype html
+html(lang="ru")
+  head 
+    title= pageTitle
+    style 
+      include styles/style.css
+  body
+    #app
+      .hidden#login
+        .login-field  
+          input(type="text" data-role="login-input-name" placeholder="введите ник").login-input-name
+        .login-field  
+          button(data-role="login-submit").login-submit Войти
+      .hidden#main
+        .left-side 
+          .user-info  
+            .user-photo(data-role="user-photo")
+            .user-name(data-role="user-name")
+          .user-list-container 
+            .user-list__header Все пользователи
+            .user-list
+        .right-side 
+          .messages-container(data-role="messages-list")
+          .input-container(data-role="messages-sender")
+            input(type="text" data-role="message-input" placeholder="Введите сообщение").message-input
+
+            button.send-btn(data-role="message-send-btn") Отправить
+    script(src="./index.js")
+
